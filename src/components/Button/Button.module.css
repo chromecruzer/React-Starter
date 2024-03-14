@@ -1,0 +1,8 @@
+.Btn{
+    background-color: hsl(209, 91%, 9%);
+    color: azure;
+    padding: 20px 10px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+  }
