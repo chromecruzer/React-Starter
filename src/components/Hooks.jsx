@@ -22,6 +22,7 @@ function MyComponent() {
 
   useEffect(() => {
     alert("The hooke component has re-rendered");
+    //document.title = `Kowsi`
     //return ()=>{alert ("Bye bye Hooke component")}                  // also u can call the efect the when the component is destroyed
   }, []); // val in []
 

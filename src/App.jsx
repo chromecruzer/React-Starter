@@ -17,6 +17,9 @@ import Part2 from "./components/Part2";
 
 // passerprops
 import PropFromParent from "./components/props";
+import ColorPicker from "./components/ColorPicker";
+import State from "./components/State";
+import TodoList from "./components/TodoList";
 
 const vegies = [
   { id: 1, name: "brinjal" },
@@ -52,6 +55,12 @@ function App() {
       {vegies.length > 0 && <PropFromParent items={vegies} category={"Green"} />}
       {nuts.length > 0 ?<PropFromParent items={nuts} category={"Deserts + Rich Nuts"} /> : null}
       {/* <Footer/> */}
+      <br />
+      <ColorPicker/>
+      <br />
+      <State/>
+      <br />
+      <TodoList/>
     </>
   );
 }
