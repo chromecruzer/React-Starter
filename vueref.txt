@@ -1,0 +1,64 @@
+<template>
+  <div>
+    <button @click="clicker">CLICK ME MFS</button>
+    <button @click="clckerCallback">CLICK ME3- MFS</button>
+    <button @click="eButton">Event</button>
+    <div>
+      <input v-model="name" />
+      <h5><b>One way Binding React:</b>{{ name }}</h5>
+      <br />
+      <textarea v-model="comment" placeholder="Enter Your cmts here Nigga! "></textarea>
+      <div><h4>You wrote:</h4>{{ comment }}</div>
+      <br />
+      <select v-model="payment">
+        <option value="Visa">Visa</option>
+        <option value="Rupay">Rupay</option>
+        <option value="Swiss">Swiss</option>
+      </select>
+      <p>Payment: {{ payment }}</p>
+    </div>
+  </div>
+</template>
+
+<script>
+import { reactive } from 'vue';
+
+export default {
+  setup() {
+    const state = reactive({
+      count: 0,
+      name: 'Guest',
+      comment: '',
+      payment: '',
+    });
+
+    const clicker = () => {
+      if (state.count < 3) {
+        state.count++;
+        console.log(`bro u clicked me ${state.count} times`);
+      } else {
+        console.log(`bro stop clicking me plz`);
+      }
+    };
+
+    const clckerCallback = () => {
+      console.log(`${state.name} bro what the heck plz stop clicking me...`);
+    };
+
+    const eButton = (e) => {
+      if (e.target.textContent === 'Pulithi-Muthu') {
+        e.target.textContent = 'Original Text'; // Replace "Original Text" with the initial text you want
+      } else {
+        e.target.textContent = 'Pulithi-Muthu';
+      }
+      console.log(e);
+    };
+
+    return { state, clicker, clckerCallback, eButton };
+  },
+};
+</script>
+
+<style scoped>
+/* Your styles here */
+</style>
